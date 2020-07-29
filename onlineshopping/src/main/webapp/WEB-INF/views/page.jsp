@@ -26,6 +26,7 @@
 <script type="text/javascript">
 	window.menu = '${title}';
 
+	window.contextRoot = '${contextRoot}';
 </script>
 
 <!-- Bootstrap core CSS -->
@@ -33,6 +34,10 @@
 
 <!-- Bootstrap Readable THEME CSS -->
 <link href="${css}/bootstrap-read-theme.min.css" rel="stylesheet">
+
+<!-- Bootstrap DataTable CSS -->
+<link href="${css}/dataTables.bootstrap.css" rel="stylesheet">
+
 
 <!-- Add custom CSS here -->
 <link href="${css}/myapp.css" rel="stylesheet">
@@ -69,9 +74,25 @@
 			<c:if test="${userClickContact == true}">
 				<%@include file="./contact.jsp"%>
 			</c:if>
-			
+
 			<!--*************************** End Section: CONTACT US PAGE ************************-->
 
+
+			<!-- Section: ALL PRODUCTS & CATEGORY PRODUCTS PAGE -->
+			<c:if
+				test="${userClickAllProducts == true or userClickCategoryProducts == true}">
+				<%@include file="./listProducts.jsp"%>
+			</c:if>
+
+			<!--***************** End Section: ALL PRODUCTS & CATEGORY PRODUCTS PAGE *************-->
+
+			<!-- Section: User click SHOW SINGLE PRODUCT PAGE -->
+			<c:if
+				test="${userClickShowProduct == true}">
+				<%@include file="./singleProduct.jsp"%>
+			</c:if>
+
+			<!--***************** End Section: SHOW SINGLE PRODUCTS PAGE ************************-->
 
 
 		</div>
@@ -86,6 +107,12 @@
 		<!-- JavaScript -->
 		<script src="${js}/jquery.js"></script>
 		<script src="${js}/bootstrap.js"></script>
+		<!-- DataTable Plugin -->
+		<script src="${js}/jquery.dataTables.js"></script>
+
+		<!-- DataTable Bootstrap -->
+		<script src="${js}/dataTables.bootstrap.js"></script>
+
 		<script type="text/javascript" src="${js}/myapp.js"></script>
 	</div>
 </body>

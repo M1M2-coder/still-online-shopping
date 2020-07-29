@@ -11,11 +11,11 @@
    						 http://www.springframework.org/schema/mvc
    						 http://www.springframework.org/schema/mvc/spring-mvc.xsd">
  	  
-  <!-- Scanning the controllers from their package  -->
-   <context:component-scan base-package="com.m2m.onlineshopping.controller" />
+  <!-- Scanning all the packages for the components  -->
+   <context:component-scan base-package="com.m2m.onlineshopping" />
    
    <!-- Scanning the backend project Packages -->
-   <context:component-scan base-package="com.m2m.shoppingbackend.daoImp" />
+   <context:component-scan base-package="com.m2m.shoppingbackend" />
    
    <!-- View Resolver: Map all the logical filenames to their actual physical file locations -->
    <bean id="viewResolver"
